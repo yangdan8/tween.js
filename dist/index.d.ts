@@ -1,11 +1,11 @@
-declare module "TWEEN" {
-
-    type EasingFunction = (amount: number) => number;
+declare module "tweenjs" {
+	
+    export type EasingFunction = (amount: number) => number;
 
     /**
      * The Ease class provides a collection of easing functions for use with tween.js.
      */
-    const Easing: {
+    export const Easing: {
         Linear: {
             None: (amount: number) => number;
         };
@@ -61,17 +61,17 @@ declare module "TWEEN" {
         };
     };
 
-    let NOW: () => number;
+    export let NOW: () => number;
 
     /**
      *
      */
-    type InterpolationFunction = (v: number[], k: number) => number;
+    export type InterpolationFunction = (v: number[], k: number) => number;
 
     /**
      *
      */
-    const Interpolation: {
+    export const Interpolation: {
         Linear: (v: number[], k: number) => number;
         Bezier: (v: number[], k: number) => number;
         CatmullRom: (v: number[], k: number) => number;
@@ -86,12 +86,12 @@ declare module "TWEEN" {
     /**
      * Utils
      */
-    class Sequence {
+    export class Sequence {
         private static _nextId;
         static nextId(): number;
     }
 
-    const VERSION = "18.5.0";
+    export const VERSION = "18.5.1-pi.1";
 
     /**
      * Controlling groups of tweens
@@ -99,7 +99,7 @@ declare module "TWEEN" {
      * Using the TWEEN singleton to manage your tweens can cause issues in large apps with many components.
      * In these cases, you may want to create your own smaller groups of tween
      */
-    class Main extends Group {
+    export class Main extends Group {
         version: string;
         now: () => number;
         Group: typeof Group;
@@ -186,7 +186,7 @@ declare module "TWEEN" {
     
     
     
-    class Tween<T extends UnknownProps> {
+    export class Tween<T extends UnknownProps> {
         private _object;
         private _group;
         private _isPaused;
@@ -246,7 +246,7 @@ declare module "TWEEN" {
         private _swapEndStartRepeatValues;
     }
 
-    type UnknownProps = Record<string, unknown>;
+    export type UnknownProps = Record<string, unknown>;
 
     /**
      * Controlling groups of tweens
@@ -254,7 +254,7 @@ declare module "TWEEN" {
      * Using the TWEEN singleton to manage your tweens can cause issues in large apps with many components.
      * In these cases, you may want to create your own smaller groups of tween
      */
-    class Group {
+    export class Group {
         private _tweens;
         private _tweensAddedDuringUpdate;
         getAll(): Array<Tween<UnknownProps>>;
@@ -265,9 +265,4 @@ declare module "TWEEN" {
     }
 
     export default TWEEN;
-}
-
-declare module "tweenjs" {
-    import TWEEN from "TWEEN";
-    export = TWEEN;
 }

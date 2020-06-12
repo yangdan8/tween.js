@@ -749,7 +749,7 @@
         return Tween;
     }());
 
-    var VERSION = '18.5.0';
+    var VERSION = '18.5.1-pi.1';
 
     /**
      * Tween.js - Licensed under the MIT license

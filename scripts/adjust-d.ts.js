@@ -19,15 +19,21 @@ content = content
 	.replace(/;\n(\s*)\//g, ';\n\n$1/')
 	.replace(/}\n(\s*)([^\s])/g, '}\n\n$1$2')
 	.replace(/\n\n(\s*\n)+/g, '\n\n')
+	.replace(/(  )(type EasingFunction = )/g, '$1export $2')
+	.replace(/(  )(const Easing: \{\n)/g, '$1export $2')
+	.replace(/(  )(let NOW: \(\) =\> number;)/g, '$1export $2')
+	.replace(/(  )(type InterpolationFunction = )/g, '$1export $2')
+	.replace(/(  )(const Interpolation: \{\n)/g, '$1export $2')
+	.replace(/(  )(class Sequence \{\n)/g, '$1export $2')
+	.replace(/(  )(const VERSION = )/g, '$1export $2')
+	.replace(/(  )(class Main extends Group \{\n)/g, '$1export $2')
+	.replace(/(  )(class Tween\<T extends UnknownProps\> \{\n)/g, '$1export $2')
+	.replace(/(  )(type UnknownProps = Record\<string, unknown\>;\n)/g, '$1export $2')
+	.replace(/(  )(class Group \{\n)/g, '$1export $2')
 
-content = `declare module "TWEEN" {
-${content}
+content = `declare module "tweenjs" {
+	${content}
     export default TWEEN;
-}
-
-declare module "tweenjs" {
-    import TWEEN from "TWEEN";
-    export = TWEEN;
 }
 `
 
