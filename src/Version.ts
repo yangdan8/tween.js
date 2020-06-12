@@ -1,2 +1,2 @@
-const VERSION = '18.5.1-pi.3'
+const VERSION = '18.5.1-pi.4'
 export default VERSION
