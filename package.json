@@ -1,12 +1,12 @@
 {
 	"name": "tweenjs",
 	"description": "Super simple, fast and easy to use tweening engine which incorporates optimised Robert Penner's equations.",
-	"version": "18.5.1-pi.1",
-    "publishConfig": {
-        "registry": "http://192.168.13.111:8081/repository/pilot-hosted/"
-    },
+	"version": "18.5.1-pi.2",
+	"publishConfig": {
+		"registry": "http://192.168.13.111:8081/repository/pilot-hosted/"
+	},
 	"main": "dist/tween.cjs.js",
-	"types": "types/index.d.ts",
+	"types": "dist/index.d.ts",
 	"module": "dist/tween.esm.js",
 	"files": [
 		"dist",
