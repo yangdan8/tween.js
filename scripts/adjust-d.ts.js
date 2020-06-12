@@ -30,6 +30,8 @@ content = content
 	.replace(/(  )(class Tween\<T extends UnknownProps\> \{\n)/g, '$1export $2')
 	.replace(/(  )(type UnknownProps = Record\<string, unknown\>;\n)/g, '$1export $2')
 	.replace(/(  )(class Group \{\n)/g, '$1export $2')
+	.replace(/(  start\(time)(: number\): this;\n)/g, '$1?$2')
+	.replace(/(  update\(time)(: number, preserve?: boolean\): boolean;\n)/g, '$1?$2')
 
 content = `declare module "tweenjs" {
 	${content}

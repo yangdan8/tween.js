@@ -91,7 +91,7 @@ declare module "tweenjs" {
         static nextId(): number;
     }
 
-    export const VERSION = "18.5.1-pi.2";
+    export const VERSION = "18.5.1-pi.3";
 
     /**
      * Controlling groups of tweens
@@ -220,7 +220,7 @@ declare module "tweenjs" {
         isPaused(): boolean;
         to(properties: UnknownProps, duration?: number): this;
         duration(d: number): this;
-        start(time: number): this;
+        start(time?: number): this;
         private _setupProperties;
         stop(): this;
         end(): this;
