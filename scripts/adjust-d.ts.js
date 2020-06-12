@@ -25,7 +25,7 @@ ${content}
     export default TWEEN;
 }
 
-declare module "@tweenjs/tween.js" {
+declare module "tweenjs" {
     import TWEEN from "TWEEN";
     export = TWEEN;
 }

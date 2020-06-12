@@ -1,7 +1,10 @@
 {
-	"name": "@tweenjs/tween.js",
+	"name": "tweenjs",
 	"description": "Super simple, fast and easy to use tweening engine which incorporates optimised Robert Penner's equations.",
 	"version": "18.5.0",
+    "publishConfig": {
+        "registry": "http://192.168.13.111:8081/repository/pilot-hosted/"
+    },
 	"main": "dist/tween.cjs.js",
 	"types": "dist/index.d.ts",
 	"module": "dist/tween.esm.js",
@@ -35,7 +38,8 @@
 		"test-unit": "nodeunit test/unit/nodeunitheadless.js",
 		"test-lint": "npm run prettier -- --check && eslint 'src/**/*.ts'",
 		"lint": "npm run prettier -- --write && eslint 'src/**/*.ts' --fix",
-		"prettier": "prettier './**/*.{js,ts,md,json,html,css}'"
+		"prettier": "prettier './**/*.{js,ts,md,json,html,css}'",
+		"prepare": "npm run build"
 	},
 	"author": "tween.js contributors (https://github.com/tweenjs/tween.js/graphs/contributors)",
 	"devDependencies": {

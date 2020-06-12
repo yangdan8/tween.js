@@ -413,7 +413,6 @@
             return this._isPaused;
         };
         Tween.prototype.to = function (properties, duration) {
-            // to (properties, duration) {
             for (var prop in properties) {
                 this._valuesEnd[prop] = properties[prop];
             }
